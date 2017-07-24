@@ -76,7 +76,8 @@ volScalarField sigmaMHD
         IOobject::READ_IF_PRESENT,
 	IOobject::AUTO_WRITE
     ),
-    alpha1*sigmaMHD1 + alpha2*sigmaMHD2
+	mesh,
+	dimensionedScalar("sigmaMHD", dimensionSet(-1,-3,3,0,0,2,0),0)
 );
 
 JB = JBTable.assignJBValues(mesh);
